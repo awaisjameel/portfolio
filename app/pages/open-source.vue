@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import { openSourceGroups, techFilters, type Tech } from '#shared/data/open-source'
-import { formatDate, roundedDownLabel } from '#shared/utils/registry'
+import registrySnapshot from '#shared/data/registry-snapshot.json'
+import { formatDate, roundedDownLabel, sumCounts } from '#shared/utils/registry'
+import { openSourceCard } from '#shared/utils/social'
 
 usePageSeo({
   title: 'Open-source maintainer: Laravel and Node packages',
   description:
     'Open-source Laravel, PHP, and Node packages maintained by Awais Jameel, with live install counts, plus starters, tools, and the Lumen desktop app.',
-  path: '/open-source'
+  path: '/open-source',
+  kind: 'collection',
+  // The image is a file built from the snapshot, so its description uses the same numbers.
+  card: openSourceCard({
+    packagist: sumCounts(registrySnapshot.packagist),
+    npm: sumCounts(registrySnapshot.npm)
+  })
 })
 
 const { registry, activity, countLabel, totals } = useLiveStats()

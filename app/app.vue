@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { site } from '#shared/data/site'
+import { personId } from '#shared/utils/social'
 
 const { public: config } = useRuntimeConfig()
 
@@ -11,8 +12,11 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
+        '@id': personId(config.siteUrl),
         name: site.name,
         url: config.siteUrl,
+        image: `${config.siteUrl}${site.photo}`,
+        email: site.email,
         jobTitle: 'Senior Full-Stack Engineer and Software Architect',
         address: {
           '@type': 'PostalAddress',

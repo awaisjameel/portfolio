@@ -1,0 +1,205 @@
+[
+  {
+    "key": "home",
+    "path": "awaisjameel",
+    "title": "I build reliable SaaS products and solve complex integration problems.",
+    "context": "Senior Full-Stack Engineer · Software Architect",
+    "stats": [
+      {
+        "value": "1,100+",
+        "label": "companies use platforms I've helped build"
+      },
+      {
+        "value": "20+",
+        "label": "carrier programs and integrations"
+      },
+      {
+        "value": "8,700+",
+        "label": "GitHub contributions since 2020"
+      }
+    ],
+    "portrait": true,
+    "alt": "I build reliable SaaS products and solve complex integration problems. Senior Full-Stack Engineer · Software Architect. 1,100+ companies use platforms I've helped build, 20+ carrier programs and integrations, 8,700+ GitHub contributions since 2020. By Awais Jameel."
+  },
+  {
+    "key": "open-source",
+    "path": "open-source",
+    "title": "Open source",
+    "context": "Laravel, PHP, and Node packages, plus starters and tools",
+    "stats": [
+      {
+        "value": "8",
+        "label": "published packages"
+      },
+      {
+        "value": "4,800+",
+        "label": "Packagist installs"
+      },
+      {
+        "value": "3,000+",
+        "label": "npm downloads"
+      }
+    ],
+    "portrait": false,
+    "alt": "Open source. Laravel, PHP, and Node packages, plus starters and tools. 8 published packages, 4,800+ Packagist installs, 3,000+ npm downloads. By Awais Jameel."
+  },
+  {
+    "key": "resume",
+    "path": "resume",
+    "title": "Awais Jameel",
+    "context": "Senior Full-Stack Engineer · Software Architect",
+    "stats": [
+      {
+        "value": "Since 2016",
+        "label": "building production software"
+      },
+      {
+        "value": "1,100+",
+        "label": "companies use platforms I've helped build"
+      },
+      {
+        "value": "8",
+        "label": "open-source packages"
+      }
+    ],
+    "portrait": true,
+    "alt": "Awais Jameel. Senior Full-Stack Engineer · Software Architect. Since 2016 building production software, 1,100+ companies use platforms I've helped build, 8 open-source packages. By Awais Jameel."
+  },
+  {
+    "key": "contact",
+    "path": "contact",
+    "title": "Open to freelance projects and senior roles",
+    "context": "SaaS projects, integration problems, and senior engineering roles",
+    "stats": [
+      {
+        "value": "hello@afoxtech.com",
+        "label": "email"
+      },
+      {
+        "value": "Remote",
+        "label": "from Lahore, Pakistan"
+      }
+    ],
+    "portrait": true,
+    "alt": "Open to freelance projects and senior roles. SaaS projects, integration problems, and senior engineering roles. hello@afoxtech.com email, Remote from Lahore, Pakistan. By Awais Jameel."
+  },
+  {
+    "key": "writing",
+    "path": "writing",
+    "title": "Writing",
+    "context": "Engineering articles on SaaS, integrations, and reliable delivery",
+    "stats": [],
+    "portrait": false,
+    "alt": "Writing. Engineering articles on SaaS, integrations, and reliable delivery. By Awais Jameel."
+  },
+  {
+    "key": "work-one-pro-suite",
+    "path": "work/one-pro-suite",
+    "title": "One Pro Suite",
+    "context": "Multi-tenant insurance quoting SaaS",
+    "stats": [
+      {
+        "value": "17",
+        "label": "carrier integrations"
+      },
+      {
+        "value": "18",
+        "label": "backend modules"
+      },
+      {
+        "value": "450+",
+        "label": "automated test files"
+      }
+    ],
+    "portrait": false,
+    "alt": "One Pro Suite. Multi-tenant insurance quoting SaaS. 17 carrier integrations, 18 backend modules, 450+ automated test files. By Awais Jameel."
+  },
+  {
+    "key": "work-rocketmga",
+    "path": "work/rocketmga",
+    "title": "RocketMGA and RocketFlood",
+    "context": "Flood insurance MGA and agency platforms",
+    "stats": [
+      {
+        "value": "1,100+",
+        "label": "companies and agencies"
+      },
+      {
+        "value": "20+",
+        "label": "carrier programs and integrations"
+      },
+      {
+        "value": "Under 1 s",
+        "label": "core quote time, down from 8–10 seconds"
+      }
+    ],
+    "portrait": false,
+    "alt": "RocketMGA and RocketFlood. Flood insurance MGA and agency platforms. 1,100+ companies and agencies, 20+ carrier programs and integrations, Under 1 s core quote time, down from 8–10 seconds. By Awais Jameel."
+  },
+  {
+    "key": "work-menscript",
+    "path": "work/menscript",
+    "title": "MenScript",
+    "context": "Multi-country telehealth and subscription commerce",
+    "stats": [
+      {
+        "value": "1,000+",
+        "label": "commits of mine"
+      },
+      {
+        "value": "4",
+        "label": "code generations"
+      },
+      {
+        "value": "Multi-country",
+        "label": "localized storefronts"
+      }
+    ],
+    "portrait": false,
+    "alt": "MenScript. Multi-country telehealth and subscription commerce. 1,000+ commits of mine, 4 code generations, Multi-country localized storefronts. By Awais Jameel."
+  },
+  {
+    "key": "work-toolhub",
+    "path": "work/toolhub",
+    "title": "ToolHub",
+    "context": "Privacy-first tools for images, PDFs, text, and developer work",
+    "stats": [
+      {
+        "value": "54",
+        "label": "browser tools"
+      },
+      {
+        "value": "Local",
+        "label": "file processing by default"
+      },
+      {
+        "value": "23",
+        "label": "SEO articles indexed in May 2026"
+      }
+    ],
+    "portrait": false,
+    "alt": "ToolHub. Privacy-first tools for images, PDFs, text, and developer work. 54 browser tools, Local file processing by default, 23 SEO articles indexed in May 2026. By Awais Jameel."
+  },
+  {
+    "key": "work-lumen",
+    "path": "work/lumen",
+    "title": "Lumen",
+    "context": "On-device AI desktop photo gallery",
+    "stats": [
+      {
+        "value": "v0.12.0",
+        "label": "released 20 Oct 2026"
+      },
+      {
+        "value": "Local",
+        "label": "AI runs on your own PC"
+      },
+      {
+        "value": "0",
+        "label": "accounts, uploads, or telemetry"
+      }
+    ],
+    "portrait": false,
+    "alt": "Lumen. On-device AI desktop photo gallery. v0.12.0 released 20 Oct 2026, Local AI runs on your own PC, 0 accounts, uploads, or telemetry. By Awais Jameel."
+  }
+]

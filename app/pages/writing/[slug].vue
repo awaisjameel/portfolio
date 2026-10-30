@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { articles } from '#content/body'
 import { formatDate } from '#shared/utils/registry'
+import { articleCard, readingMinutes } from '#shared/utils/social'
 import { isWritingEnabled } from '#shared/utils/writing'
 
 const route = useRoute()
@@ -14,7 +15,12 @@ usePageSeo({
   title: article.title,
   description: article.description,
   path: `/writing/${article.slug}`,
-  type: 'article'
+  kind: 'article',
+  card: articleCard(article),
+  published: article.date,
+  updated: article.updated,
+  tags: article.tags,
+  detail: { label: 'Reading time', value: `${readingMinutes(article.body)} min read` }
 })
 </script>
 
@@ -27,7 +33,8 @@ usePageSeo({
         <p class="mono muted">{{ formatDate(article.date) }}</p>
       </div>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="prose page-end" v-html="article.body"></div>
+      <div class="prose" v-html="article.body"></div>
+      <ShareRow class="page-end" :title="article.title" :path="`/writing/${article.slug}`" />
     </div>
   </main>
 </template>

@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { Marked, type Tokens } from 'marked'
-import { flows } from '../../shared/data/flows'
+import { flows } from '../../shared/data/flows.ts'
 import type {
   CaseStudy,
   CaseStudyBlock,
@@ -12,6 +12,9 @@ import type {
 
 const DIAGRAM_MARKER = /<!-- diagram:([a-z-]+) -->/
 const DIAGRAMS: string[] = [...Object.keys(flows), 'quote-speed']
+
+/** YAML turns dates into Date objects, which a generated JSON module can't keep. */
+const isoDate = (value: unknown) => new Date(value as string).toISOString().slice(0, 10)
 
 const kebab = (text: string) =>
   text
@@ -65,6 +68,8 @@ export function loadCaseStudy(file: string): CaseStudy {
     'order',
     'size',
     'role',
+    'tagline',
+    'published',
     'summary',
     'description',
     'lede',
@@ -73,7 +78,13 @@ export function loadCaseStudy(file: string): CaseStudy {
     'statsNote'
   ])
   const html = sectionMarkdown.parse(content, { async: false })
-  return { ...data, slug: basename(file, '.md'), body: caseStudyBlocks(file, html) } as CaseStudy
+  return {
+    ...data,
+    published: isoDate(data.published),
+    ...(data.updated && { updated: isoDate(data.updated) }),
+    slug: basename(file, '.md'),
+    body: caseStudyBlocks(file, html)
+  } as CaseStudy
 }
 
 export function loadContent(contentDir: string): SiteContent {
@@ -89,7 +100,9 @@ export function loadContent(contentDir: string): SiteContent {
         slug: basename(file, '.md'),
         title: String(data.title),
         description: String(data.description),
-        date: new Date(data.date).toISOString().slice(0, 10),
+        date: isoDate(data.date),
+        ...(data.updated && { updated: isoDate(data.updated) }),
+        ...(data.tags && { tags: (data.tags as unknown[]).map(String) }),
         draft: Boolean(data.draft),
         body: sectionMarkdown.parse(content, { async: false })
       }

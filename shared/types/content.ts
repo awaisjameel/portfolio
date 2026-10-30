@@ -11,6 +11,9 @@ export interface CaseStudyMeta {
   order: number
   size: 'large' | 'compact'
   role: string
+  tagline: string
+  published: string
+  updated?: string
   summary: string
   description: string
   lede: string
@@ -32,6 +35,8 @@ export interface ArticleMeta {
   title: string
   description: string
   date: string
+  updated?: string
+  tags?: string[]
   draft: boolean
 }
 

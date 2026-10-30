@@ -42,7 +42,7 @@ Read [AGENTS.md](AGENTS.md) before making changes. It covers the checks to run b
 | `npm run check:content` | Check published copy against the content rules         |
 | `npm run stats:refresh` | Update the bundled registry and contribution snapshots |
 | `npm run resume:pdf`    | Generate the résumé PDF from the built `/resume` page  |
-| `npm run og:image`      | Generate the social preview image                      |
+| `npm run og:image`      | Generate the share image for every page                |
 
 ## Content
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { articles } from '#content/meta'
 import { formatDate } from '#shared/utils/registry'
+import { writingCard } from '#shared/utils/social'
 import { isWritingEnabled } from '#shared/utils/writing'
 
 if (!isWritingEnabled(articles.length)) {
@@ -10,7 +11,9 @@ if (!isWritingEnabled(articles.length)) {
 usePageSeo({
   title: 'Writing',
   description: 'Engineering articles by Awais Jameel on SaaS, integrations, and reliable delivery.',
-  path: '/writing'
+  path: '/writing',
+  kind: 'collection',
+  card: writingCard()
 })
 </script>
 

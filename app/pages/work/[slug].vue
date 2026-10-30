@@ -2,6 +2,7 @@
 import { caseStudies as generated } from '#content/body'
 import { flows } from '#shared/data/flows'
 import type { CaseStudy } from '#shared/types/content'
+import { caseStudyCard } from '#shared/utils/social'
 
 // The generated module is plain JSON, so its inferred type loses the block union.
 const caseStudies = generated as unknown as CaseStudy[]
@@ -18,7 +19,11 @@ usePageSeo({
   title: `${study.title} case study`,
   description: study.description,
   path: `/work/${study.slug}`,
-  type: 'article'
+  kind: 'case-study',
+  card: caseStudyCard(study),
+  published: study.published,
+  updated: study.updated,
+  detail: { label: 'Role', value: study.role }
 })
 
 const next = caseStudies[(index + 1) % caseStudies.length]
@@ -75,6 +80,8 @@ const next = caseStudies[(index + 1) % caseStudies.length]
         <ProofStrip :items="study.stats" />
         <p class="note">{{ study.statsNote }}</p>
       </div>
+
+      <ShareRow :title="`${study.title} case study`" :path="`/work/${study.slug}`" />
 
       <div class="study-block next">
         <NuxtLink class="btn primary" to="/#contact">Discuss a project or role</NuxtLink>

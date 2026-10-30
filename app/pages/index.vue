@@ -3,11 +3,14 @@ import { caseStudies } from '#content/meta'
 import { allProjects, highlightNames } from '#shared/data/open-source'
 import { capabilities, experience, proof, site, waysToWork } from '#shared/data/site'
 import { formatDate, roundedDownLabel } from '#shared/utils/registry'
+import { homeCard } from '#shared/utils/social'
 
 usePageSeo({
   title: 'Senior Full-Stack Engineer and Software Architect',
   description: site.description,
-  path: '/'
+  path: '/',
+  kind: 'profile',
+  card: homeCard()
 })
 
 const { registry, activity, countFor, countLabel, totals } = useLiveStats()

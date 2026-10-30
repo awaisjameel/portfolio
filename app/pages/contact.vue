@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { contactCard } from '#shared/utils/social'
+
 usePageSeo({
   title: 'Contact',
   description:
     'Contact Awais Jameel about a SaaS project, an integration problem, or a senior engineering role.',
-  path: '/contact'
+  path: '/contact',
+  kind: 'contact',
+  card: contactCard()
 })
 </script>
 

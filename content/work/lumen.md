@@ -3,6 +3,8 @@ title: Lumen
 order: 5
 size: compact
 role: Creator
+tagline: On-device AI desktop photo gallery
+published: 2026-10-30
 summary: An on-device AI desktop photo gallery in Go. No accounts, no uploads, no telemetry.
 description: How Awais Jameel built Lumen, an on-device AI desktop photo gallery in Go with local search, signed updates, and no uploads.
 lede: I built Lumen, a Windows-first desktop gallery that organizes large photo libraries with AI running on your own PC.

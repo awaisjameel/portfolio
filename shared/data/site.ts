@@ -1,5 +1,7 @@
 export const site = {
   name: 'Awais Jameel',
+  firstName: 'Awais',
+  lastName: 'Jameel',
   handle: 'awaisjameel',
   title: 'Senior Full-Stack Engineer · Software Architect · Open-Source Maintainer',
   description:

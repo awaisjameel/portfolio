@@ -1194,6 +1194,38 @@ form {
   gap: 14px;
 }
 
+.share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+
+.share-links a,
+.share-links button {
+  display: inline-block;
+  padding-block: 8px;
+}
+
+.share-links button {
+  background: none;
+  border: 0;
+  padding-inline: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.share-links button:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.share-status {
+  min-height: 1.5em;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+
 .article-list li {
   padding-block: 16px;
   border-top: 1px solid var(--line);

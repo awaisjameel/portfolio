@@ -2,6 +2,7 @@
 title: Article title
 description: One sentence for search results and link previews.
 date: 2026-01-01
+tags: [Laravel, Integrations]
 draft: true
 ---
 

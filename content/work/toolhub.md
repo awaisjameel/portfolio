@@ -3,6 +3,8 @@ title: ToolHub
 order: 4
 size: compact
 role: Creator
+tagline: Privacy-first tools for images, PDFs, text, and developer work
+published: 2026-10-30
 summary: 54 privacy-first browser tools for images, PDFs, text, and developer work. Built on Nuxt 4.
 description: How Awais Jameel built ToolHub, 54 privacy-first browser tools on Nuxt 4 that process files on the visitor's own device by default.
 lede: I built ToolHub, a live suite of 54 privacy-first browser tools that work on your own device by default.

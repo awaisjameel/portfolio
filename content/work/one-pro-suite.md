@@ -3,6 +3,8 @@ title: One Pro Suite
 order: 1
 size: large
 role: Lead architect
+tagline: Multi-tenant insurance quoting SaaS
+published: 2026-10-30
 summary: A modular, multi-tenant insurance quoting SaaS with schema-driven intake, multi-carrier orchestration, realtime quote delivery, and blue/green AWS deployments.
 description: How Awais Jameel architected One Pro Suite, a modular, multi-tenant insurance quoting SaaS with 17 carrier integrations and blue/green AWS deployments.
 lede: I architect and build a modular, multi-tenant insurance quoting SaaS for agencies, producers, and consumers.

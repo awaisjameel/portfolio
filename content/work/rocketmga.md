@@ -3,6 +3,8 @@ title: RocketMGA and RocketFlood
 order: 2
 size: large
 role: Primary contributor since 2020
+tagline: Flood insurance MGA and agency platforms
+published: 2026-10-30
 summary: A multi-tenant flood insurance MGA and agency platform with comparative rating, onboarding, quoting, and policies. On the RocketFlood quote engine, I cut a core quote path from 8–10 seconds to under 1 second with Redis caching, parallel carrier calls, request batching, and asynchronous delivery.
 description: How Awais Jameel helped build RocketMGA and RocketFlood, flood insurance platforms used by 1,100+ companies, and cut a core quote path to under 1 second.
 lede: I've been the primary contributor to RocketMGA and the RocketFlood agent portal since 2020, working across quoting, carrier integrations, and performance.

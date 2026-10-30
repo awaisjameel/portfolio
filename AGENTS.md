@@ -18,7 +18,7 @@ Instructions for anyone working on this site, human or agent. [README.md](README
 | `shared/utils/`    | Pure, tested logic shared by the app, server, and config                                       |
 | `server/api/`      | Contact form, daily stats, daily activity, and health check                                    |
 | `server/routes/`   | `robots.txt` and `sitemap.xml`                                                                 |
-| `scripts/`         | Content guard, résumé PDF, social image, and stats refresh                                     |
+| `scripts/`         | Content guard, résumé PDF, share images, and stats refresh                                     |
 | `tests/`           | Vitest unit tests                                                                              |
 
 ## Before every commit
@@ -73,11 +73,13 @@ If a change conflicts with one of these rules, raise it before making the change
 
 ### Case studies
 
-Each file in `content/work/` is one page. `title`, `order`, `size`, `role`, `summary`, `description`, `lede`, `details`, `stats`, and `statsNote` are required, and the build fails if one is missing.
+Each file in `content/work/` is one page. `title`, `order`, `size`, `role`, `tagline`, `published`, `summary`, `description`, `lede`, `details`, `stats`, and `statsNote` are required, and the build fails if one is missing.
 
 - `order` sets the position on the home page, and `slug` comes from the filename.
 - `size: large` gets a full home entry. `size: compact` joins the smaller row below.
 - `stats` needs exactly four items. `statsNote` says where they came from and what stays private.
+- `tagline` is the short line on the share image, up to 64 characters. The image also shows the first three `stats`.
+- `published` is the first publication date. Add `updated` when a page changes meaningfully.
 - `visual` adds a small chart to the home entry: `tally` or `speed`.
 - `image` needs `src`, `alt`, `width`, and `height`.
 
@@ -103,11 +105,31 @@ The second build ships the new PDF. Commit `public/awais-jameel-resume.pdf`, the
 
 ### Writing
 
-The section stays hidden until `MINIMUM_ARTICLES` published articles exist. Copy `content/writing/_template.md` and remove `draft: true` to publish.
+The section stays hidden until `MINIMUM_ARTICLES` published articles exist. Copy `content/writing/_template.md` and remove `draft: true` to publish. Each new article needs `npm run og:image`, and `tests/social.spec.ts` fails until it has run. `tags` and `updated` are optional and appear in its link previews.
 
 ### Stats
 
 `/api/stats` and `/api/activity` refresh daily and fall back to the snapshots in `shared/data/` when a lookup fails. Run `npm run stats:refresh` now and then, and commit the snapshots. A build that prerenders stale numbers still shows their date.
+
+## Social sharing
+
+Every page calls `usePageSeo` with a `kind` and a share card. Together they set the preview tags, the image, its description, and the page's structured data. Builders live in `shared/utils/social.ts`.
+
+| Page type    | `kind`       | Link preview                                                      |
+| ------------ | ------------ | ----------------------------------------------------------------- |
+| Home, résumé | `profile`    | Portrait card, with Open Graph profile tags                       |
+| Contact      | `contact`    | Portrait card with availability and email                         |
+| Open source  | `collection` | Package and download totals                                       |
+| Case study   | `case-study` | Tagline and first three stats, with article dates and a role line |
+| Article      | `article`    | Title, description, and date, with tags and reading time          |
+
+- **Images:** `npm run og:image` builds `public/og/*.png` and `scripts/og-cards.json` from the same copy the pages use. Commit both. The server has no browser, so images are never built during a deployment.
+- **Keeping cards current:** `tests/social.spec.ts` fails when a card's text or numbers no longer match the images. Run `npm run og:image` after changing a title, tagline, the first three stats, or the proof numbers, or when `npm run stats:refresh` changes a rounded total.
+- **Limits:** images are 1200x630 PNGs under 300 KB, so WhatsApp shows them. Case-study descriptions stay within 160 characters.
+- **Portraits:** they appear on the home, résumé, and contact cards only.
+- **Share row:** `ShareRow.vue` sits after the content on case studies and articles. Share links are plain URLs, so no platform script loads and the Content-Security-Policy doesn't change. A service with no prefill URL sets `copy` in `shareTargets`, which copies the post and then opens the site, as /dev/null does.
+- **No X handle:** the owner has no X account, so leave out `twitter:site` and `twitter:creator`.
+- **After deploying a changed preview:** platforms cache previews. Refresh them with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/).
 
 ## Design system
 

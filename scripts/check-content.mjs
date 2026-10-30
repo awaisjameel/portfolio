@@ -19,6 +19,7 @@ const SCANNED = [
   'app',
   'server',
   'tests',
+  'scripts/og-cards.json',
   '.output/public'
 ]
 const TEXT_TYPES = new Set([

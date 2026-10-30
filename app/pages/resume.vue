@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { resume } from '#content/body'
 import { site } from '#shared/data/site'
+import { resumeCard } from '#shared/utils/social'
 
 usePageSeo({
   title: 'Résumé',
   description:
     'Résumé of Awais Jameel: senior full-stack engineer, software architect, and open-source maintainer building production software since 2016.',
-  path: '/resume'
+  path: '/resume',
+  kind: 'profile',
+  card: resumeCard()
 })
 
 const print = () => window.print()

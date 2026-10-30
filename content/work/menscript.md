@@ -3,6 +3,8 @@ title: MenScript
 order: 3
 size: large
 role: Freelance senior full-stack developer
+tagline: Multi-country telehealth and subscription commerce
+published: 2026-10-30
 summary: A multi-country men's telehealth and subscription commerce platform. I led its full-stack modernization across subscription billing, identity verification, prescription-oriented workflows, localization, fulfillment integrations, performance, and deployment.
 description: How Awais Jameel led the full-stack modernization of MenScript, a multi-country men's telehealth and subscription commerce platform built with Laravel and Nuxt.
 lede: I've worked on MenScript since 2021, and I led the move from separate frontends and backends to one Laravel and Nuxt platform.
