@@ -8,6 +8,8 @@ const root = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '
 const RULES = [[/lorem ipsum|TODO|FIXME/i, 'unfinished copy']]
 
 const SCANNED = [
+  'AGENTS.md',
+  'CLAUDE.md',
   'README.md',
   '.env.example',
   'ecosystem.config.cjs',

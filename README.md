@@ -24,9 +24,12 @@ The site opens on `http://localhost:3001`. Without SMTP settings, the contact fo
 | Articles                  | `content/writing/*.md`       |
 | Status line, proof, roles | `shared/data/site.ts`        |
 | Open-source list          | `shared/data/open-source.ts` |
+| Animated system diagrams  | `shared/data/flows.ts`       |
 | Colors, type, and layout  | `app/assets/css/main.css`    |
 
 The writing section stays hidden until two published articles exist. Copy `content/writing/_template.md` to start one.
+
+Read [AGENTS.md](AGENTS.md) before making changes. It covers the checks to run before a commit, the rules for public content, and how each part of the site works.
 
 ## Commands
 
