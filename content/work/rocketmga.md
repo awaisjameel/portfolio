@@ -7,7 +7,6 @@ summary: A multi-tenant flood insurance MGA and agency platform with comparative
 description: How Awais Jameel helped build RocketMGA and RocketFlood, flood insurance platforms used by 1,100+ companies, and cut a core quote path to under 1 second.
 lede: I've been the primary contributor to RocketMGA and the RocketFlood agent portal since 2020, working across quoting, carrier integrations, and performance.
 visual: speed
-diagram: quote-speed
 facts:
   - value: '1,100+'
     label: companies and agencies
@@ -49,7 +48,7 @@ I've been the primary contributor to RocketMGA and the RocketFlood agent portal 
 
 I started by instrumenting the flow to see where the time actually went. Most of it came from repeated work and from calls that had no reason to wait for each other.
 
-<!-- diagram -->
+<!-- diagram:quote-speed -->
 
 The changes were straightforward once that was clear:
 

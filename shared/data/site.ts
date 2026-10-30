@@ -8,8 +8,7 @@ export const site = {
   email: 'hello@afoxtech.com',
   location: 'Lahore, Pakistan · remote',
   resumePdf: '/awais-jameel-resume.pdf',
-  // Set this to a file in public/images once a professional photo is available.
-  photo: null as string | null,
+  photo: '/images/awais-jameel.webp',
   links: [
     { label: 'GitHub', href: 'https://github.com/awaisjameel' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/awaisjameel' },

@@ -7,7 +7,6 @@ summary: A modular, multi-tenant insurance quoting SaaS with schema-driven intak
 description: How Awais Jameel architected One Pro Suite, a modular, multi-tenant insurance quoting SaaS with 17 carrier integrations and blue/green AWS deployments.
 lede: I architect and build a modular, multi-tenant insurance quoting SaaS for agencies, producers, and consumers.
 visual: tally
-diagram: quote-stages
 facts:
   - value: '450+'
     label: automated test files
@@ -47,9 +46,13 @@ I lead the architecture and work hands-on in the code with the team. That covers
 
 Every quote follows the same path, whichever product or carrier is involved. That consistency is what makes the rest of the system easy to reason about.
 
-<!-- diagram -->
+<!-- diagram:quote-lifecycle -->
 
 ## Key decisions
+
+Most of the decisions below shape the same picture: every request passes one shared core, and carrier differences stay at the edge.
+
+<!-- diagram:platform-layers -->
 
 ### Forms come from schemas
 
@@ -70,6 +73,8 @@ Tenant-aware roles, encrypted integration credentials, and audit history sit in 
 ### Releases can be reversed
 
 One immutable build moves through environments, and production uses blue/green deployments on AWS with health checks and rollback. Database changes follow an expand and contract approach, so rolling back code doesn't need a destructive schema change.
+
+<!-- diagram:blue-green-release -->
 
 ## What it adds up to
 

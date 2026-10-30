@@ -16,13 +16,30 @@ describe('site content', () => {
   })
 
   it('renders section headings as labels', () => {
-    expect(content.caseStudies[0]?.body[0]).toContain('id="the-problem" class="label"')
+    expect(content.caseStudies[0]?.body[0]).toMatchObject({
+      html: expect.stringContaining('id="the-problem" class="label"')
+    })
   })
 
-  it('splits case studies with a diagram around the marker', () => {
-    for (const study of content.caseStudies.filter((item) => item.diagram)) {
-      expect(study.body[1]).not.toBe('')
-    }
+  it('places diagrams where the markers sit, in order', () => {
+    const diagrams = (slug: string) =>
+      content.caseStudies
+        .find((study) => study.slug === slug)
+        ?.body.flatMap((block) => block.diagram ?? [])
+
+    expect(diagrams('one-pro-suite')).toEqual([
+      'quote-lifecycle',
+      'platform-layers',
+      'blue-green-release'
+    ])
+    expect(diagrams('rocketmga')).toEqual(['quote-speed'])
+  })
+
+  it('leaves no raw marker in the rendered text', () => {
+    const html = content.caseStudies.flatMap((study) =>
+      study.body.flatMap((block) => block.html ?? [])
+    )
+    expect(html.join('')).not.toContain('<!-- diagram')
   })
 
   it('skips drafts and templates', () => {

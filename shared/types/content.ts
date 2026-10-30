@@ -1,3 +1,10 @@
+import type { FlowName } from '../data/flows'
+
+export type DiagramName = FlowName | 'quote-speed'
+
+/** Rendered Markdown, or a diagram placed by a `<!-- diagram:name -->` marker. */
+export type CaseStudyBlock = { html: string; diagram?: never } | { diagram: DiagramName }
+
 export interface CaseStudyMeta {
   slug: string
   title: string
@@ -8,7 +15,6 @@ export interface CaseStudyMeta {
   description: string
   lede: string
   visual?: 'tally' | 'speed'
-  diagram?: 'quote-stages' | 'quote-speed'
   facts?: { value?: string; label: string }[]
   details: { label: string; value: string }[]
   image?: { src: string; alt: string; width: number; height: number }
@@ -18,8 +24,7 @@ export interface CaseStudyMeta {
 }
 
 export interface CaseStudy extends CaseStudyMeta {
-  /** Rendered Markdown, split around the `<!-- diagram -->` marker. */
-  body: [string, string]
+  body: CaseStudyBlock[]
 }
 
 export interface ArticleMeta {

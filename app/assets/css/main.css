@@ -383,15 +383,45 @@ section,
   gap: 12px;
 }
 
-/* Quote flow */
+/* System diagrams */
+.showcase {
+  min-width: 0;
+}
+
+.showcase + .note {
+  margin-top: -18px;
+}
+
+.flow-tabs {
+  display: flex;
+  margin-bottom: 8px;
+  overflow-x: auto;
+}
+
+.flow-tabs button {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font: inherit;
+  min-height: 36px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.flow-tabs button:hover {
+  color: var(--fg);
+}
+
+.flow-tabs button[aria-selected='true'] {
+  border-bottom-color: var(--accent);
+  color: var(--fg);
+}
+
 .flow-frame {
   border: 1px solid var(--line-strong);
   border-radius: 6px;
   min-width: 0;
-}
-
-.flow-frame + .note {
-  margin-top: -18px;
 }
 
 .flow-head {
@@ -466,6 +496,10 @@ section,
 
 .node-t.small {
   font-size: 10px;
+}
+
+.node-t.tiny {
+  font-size: 9px;
 }
 
 .packet {
@@ -1148,46 +1182,7 @@ form {
   margin-bottom: 64px;
 }
 
-.stages {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  counter-reset: stage;
-  border: 1px solid var(--line-strong);
-  border-radius: 6px;
-}
-
-.stages li {
-  padding: 16px;
-  display: grid;
-  gap: 6px;
-  align-content: start;
-  min-width: 0;
-  counter-increment: stage;
-  border-left: 1px solid var(--line);
-}
-
-.stages li:first-child {
-  border-left: 0;
-}
-
-.stages li::before {
-  content: counter(stage);
-  font-family: var(--mono);
-  font-size: var(--t-mono);
-  color: var(--accent);
-}
-
-.stages b {
-  font-weight: 600;
-}
-
-.stages span {
-  font-size: var(--t-small);
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.stages + .note {
+.study-diagram .note {
   margin-top: 10px;
 }
 

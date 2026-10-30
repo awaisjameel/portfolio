@@ -2,7 +2,16 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { Marked, type Tokens } from 'marked'
-import type { CaseStudy, SiteContent } from '../../shared/types/content'
+import { flows } from '../../shared/data/flows'
+import type {
+  CaseStudy,
+  CaseStudyBlock,
+  DiagramName,
+  SiteContent
+} from '../../shared/types/content'
+
+const DIAGRAM_MARKER = /<!-- diagram:([a-z-]+) -->/
+const DIAGRAMS: string[] = [...Object.keys(flows), 'quote-speed']
 
 const kebab = (text: string) =>
   text
@@ -40,6 +49,15 @@ function requireFields(file: string, data: Record<string, unknown>, fields: stri
   }
 }
 
+/** Splitting on a capture group alternates Markdown and diagram names: html, name, html, ... */
+function caseStudyBlocks(file: string, html: string): CaseStudyBlock[] {
+  return html.split(DIAGRAM_MARKER).flatMap((part, i): CaseStudyBlock[] => {
+    if (i % 2 === 0) return part.trim() ? [{ html: part }] : []
+    if (!DIAGRAMS.includes(part)) throw new Error(`${file} uses an unknown diagram: ${part}`)
+    return [{ diagram: part as DiagramName }]
+  })
+}
+
 export function loadCaseStudy(file: string): CaseStudy {
   const { data, content } = matter(readFileSync(file, 'utf8'))
   requireFields(file, data, [
@@ -55,8 +73,7 @@ export function loadCaseStudy(file: string): CaseStudy {
     'statsNote'
   ])
   const html = sectionMarkdown.parse(content, { async: false })
-  const [before = '', after = ''] = html.split('<!-- diagram -->')
-  return { ...data, slug: basename(file, '.md'), body: [before, after] } as CaseStudy
+  return { ...data, slug: basename(file, '.md'), body: caseStudyBlocks(file, html) } as CaseStudy
 }
 
 export function loadContent(contentDir: string): SiteContent {

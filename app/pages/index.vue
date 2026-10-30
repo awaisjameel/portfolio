@@ -40,9 +40,10 @@ const highlights = computed(() =>
           <NuxtLink class="btn primary" to="/#contact">Discuss a project or role</NuxtLink>
           <NuxtLink class="btn" to="/#work">Explore selected work</NuxtLink>
         </div>
-        <QuoteFlow />
+        <SystemsShowcase />
         <p class="note">
-          An illustration of the kind of system I build. The carriers and events are not real data.
+          How <NuxtLink to="/work/one-pro-suite">One Pro Suite</NuxtLink> works, simplified for a
+          public page. The carriers and events are not real data.
         </p>
       </div>
 
@@ -132,7 +133,14 @@ const highlights = computed(() =>
         <SectionLabel id="about-heading">about</SectionLabel>
         <div class="about">
           <div class="portrait">
-            <img v-if="site.photo" :src="site.photo" :alt="`Portrait of ${site.name}`" />
+            <img
+              v-if="site.photo"
+              :src="site.photo"
+              :alt="`Portrait of ${site.name}`"
+              width="480"
+              height="480"
+              loading="lazy"
+            />
             <span v-else aria-hidden="true">AJ</span>
           </div>
           <div class="about-copy">

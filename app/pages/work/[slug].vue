@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { caseStudies } from '#content/body'
+import { caseStudies as generated } from '#content/body'
+import { flows } from '#shared/data/flows'
+import type { CaseStudy } from '#shared/types/content'
+
+// The generated module is plain JSON, so its inferred type loses the block union.
+const caseStudies = generated as unknown as CaseStudy[]
 
 const route = useRoute()
 const index = caseStudies.findIndex((candidate) => candidate.slug === route.params.slug)
@@ -52,14 +57,17 @@ const next = caseStudies[(index + 1) % caseStudies.length]
       </figure>
 
       <div class="prose study-prose">
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div v-html="study.body[0]"></div>
-        <div v-if="study.diagram" class="study-diagram">
-          <QuoteStages v-if="study.diagram === 'quote-stages'" />
-          <SpeedBars v-if="study.diagram === 'quote-speed'" />
-        </div>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div v-html="study.body[1]"></div>
+        <template v-for="(block, i) in study.body" :key="i">
+          <div v-if="block.diagram" class="study-diagram">
+            <SpeedBars v-if="block.diagram === 'quote-speed'" />
+            <template v-else>
+              <FlowDiagram :spec="flows[block.diagram]" />
+              <p class="note">Simplified. Provider, carrier, and server details are left out.</p>
+            </template>
+          </div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-else v-html="block.html"></div>
+        </template>
       </div>
 
       <div class="study-block study-results">
