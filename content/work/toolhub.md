@@ -1,6 +1,6 @@
 ---
 title: ToolHub
-order: 3
+order: 4
 size: compact
 role: Creator
 summary: 54 privacy-first browser tools for images, PDFs, text, and developer work. Built on Nuxt 4.

@@ -84,12 +84,6 @@ const highlights = computed(() =>
               <NuxtLink class="more" :to="`/work/${study.slug}`">Read case study</NuxtLink>
             </article>
           </div>
-
-          <p class="also">
-            Also: <a href="https://menscript.com/">MenScript</a>, a multi-country telehealth and
-            e-commerce platform where I've worked as a freelance senior full-stack developer since
-            October 2022, with security- and privacy-conscious payment and patient flows.
-          </p>
         </div>
       </section>
 

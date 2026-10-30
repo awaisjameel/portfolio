@@ -5,10 +5,11 @@ import { loadContent } from '../modules/content/load'
 const content = loadContent(resolve(import.meta.dirname, '../content'))
 
 describe('site content', () => {
-  it('loads the four case studies in order', () => {
+  it('loads the five case studies in order', () => {
     expect(content.caseStudies.map((study) => study.slug)).toEqual([
       'one-pro-suite',
       'rocketmga',
+      'menscript',
       'toolhub',
       'lumen'
     ])

@@ -1,6 +1,6 @@
 ---
 title: Lumen
-order: 4
+order: 5
 size: compact
 role: Creator
 summary: An on-device AI desktop photo gallery in Go. No accounts, no uploads, no telemetry.
