@@ -32,6 +32,7 @@ const TEXT_TYPES = new Set([
   '.ts',
   '.txt',
   '.vue',
+  '.webmanifest',
   '.xml'
 ])
 

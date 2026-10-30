@@ -58,7 +58,12 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#141210', media: '(prefers-color-scheme: dark)' },
         { name: 'author', content: site.name }
       ],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ],
       script: [{ innerHTML: themeInit, tagPosition: 'head' }]
     }
   },
@@ -88,7 +93,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml', '/robots.txt'],
+      routes: ['/', '/sitemap.xml', '/robots.txt', '/llms.txt'],
       failOnError: true
     },
     routeRules: {
@@ -96,6 +101,8 @@ export default defineNuxtConfig({
       '/_nuxt/**': { headers: cachedAsset },
       '/robots.txt': { headers: hourlyAsset },
       '/sitemap.xml': { headers: hourlyAsset },
+      '/llms.txt': { headers: hourlyAsset },
+      '/site.webmanifest': { headers: hourlyAsset },
       '/api/**': {
         headers: withSecurityHeaders(securityHeaders, { 'X-Robots-Tag': 'noindex, nofollow' })
       }

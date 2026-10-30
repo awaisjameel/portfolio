@@ -17,8 +17,8 @@ Instructions for anyone working on this site, human or agent. [README.md](README
 | `shared/data/`     | Site copy (`site.ts`), packages (`open-source.ts`), diagrams (`flows.ts`), and stats snapshots |
 | `shared/utils/`    | Pure, tested logic shared by the app, server, and config                                       |
 | `server/api/`      | Contact form, daily stats, daily activity, and health check                                    |
-| `server/routes/`   | `robots.txt` and `sitemap.xml`                                                                 |
-| `scripts/`         | Content guard, résumé PDF, share images, and stats refresh                                     |
+| `server/routes/`   | `robots.txt`, `sitemap.xml`, and `llms.txt`                                                    |
+| `scripts/`         | Content guard, résumé PDF, share images, site icons, and stats refresh                         |
 | `tests/`           | Vitest unit tests                                                                              |
 
 ## Before every commit
@@ -130,6 +130,12 @@ Every page calls `usePageSeo` with a `kind` and a share card. Together they set 
 - **Share row:** `ShareRow.vue` sits after the content on case studies and articles. Share links are plain URLs, so no platform script loads and the Content-Security-Policy doesn't change. A service with no prefill URL sets `copy` in `shareTargets`, which copies the post and then opens the site, as /dev/null does.
 - **No X handle:** the owner has no X account, so leave out `twitter:site` and `twitter:creator`.
 - **After deploying a changed preview:** platforms cache previews. Refresh them with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/).
+
+## Site files
+
+- **Icons:** `public/favicon.svg` is the source. `npm run icons` builds `favicon.ico`, `apple-touch-icon.png`, and the manifest icons from it. Commit the results. A missing `favicon.ico` still returns 200, because Nuxt answers with a placeholder that isn't an image, so check the file itself rather than the status code.
+- **Manifest:** `public/site.webmanifest` repeats the site name and icon list. `tests/site-files.spec.ts` checks it against the images.
+- **`llms.txt`:** `shared/utils/llms.ts` builds it from `site.ts` and each case study's `description`, so it updates itself and only ever repeats public copy.
 
 ## Design system
 

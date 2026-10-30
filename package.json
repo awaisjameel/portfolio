@@ -18,7 +18,8 @@
     "check:content": "node scripts/check-content.mjs",
     "stats:refresh": "node scripts/refresh-stats.ts",
     "resume:pdf": "node scripts/build-resume-pdf.mjs",
-    "og:image": "node scripts/build-og-image.ts"
+    "og:image": "node scripts/build-og-image.ts",
+    "icons": "node scripts/build-icons.ts"
   },
   "dependencies": {
     "@fontsource-variable/instrument-sans": "5.3.0",

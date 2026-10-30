@@ -1,0 +1,21 @@
+{
+  "name": "Awais Jameel",
+  "short_name": "Awais Jameel",
+  "description": "Senior full-stack engineer and software architect building reliable SaaS products, Laravel and Vue platforms, and U.S. insurance integrations.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#141210",
+  "theme_color": "#141210",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
