@@ -13,6 +13,9 @@ coverage/
 
 # Server configuration stays private.
 deploy/
+nginx/
+production.env.example
+DEPLOYMENT.md
 
 # Private patterns for scripts/check-content.mjs. Never commit this file.
 .content-guard.local.json
