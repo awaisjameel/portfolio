@@ -1,0 +1,15 @@
+{
+  "fetchedAt": "2026-10-30T14:57:50.107Z",
+  "packagist": {
+    "awaisjameel/laravel-address-parser": 2460,
+    "awaisjameel/texto": 1459,
+    "awaisjameel/didit-laravel-client": 695,
+    "awaisjameel/mimetypes": 195,
+    "awaisjameel/base64filehandler": 22,
+    "awaisjameel/laravel-cpanel-hosting": 2
+  },
+  "npm": {
+    "didit-node-client": 2671,
+    "video-to-thumbnail": 357
+  }
+}

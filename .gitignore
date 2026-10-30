@@ -1,0 +1,18 @@
+node_modules/
+.nuxt/
+.output/
+.data/
+dist/
+coverage/
+.DS_Store
+*.log
+
+.env
+.env.*
+!.env.example
+
+# Server configuration stays private.
+deploy/
+
+# Private patterns for scripts/check-content.mjs. Never commit this file.
+.content-guard.local.json
