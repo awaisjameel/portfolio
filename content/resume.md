@@ -8,7 +8,7 @@ Lahore, Pakistan (open to remote) · <hello@afoxtech.com> · [afoxtech.com](http
 
 ## Professional summary
 
-Senior full-stack engineer, software architect, and open-source maintainer building production software since 2016. Specialize in insurance SaaS, Laravel, Vue/Nuxt, Inertia, and TypeScript. Helped architect platforms used by **1,100+ companies/agencies** across **20+ carrier programs and integrations**, and cut a core quote path from **8-10 seconds to under 1 second**. Own architecture, implementation, testing, AWS delivery, and mentoring a team of 4+ engineers.
+Senior full-stack engineer, software architect, and open-source maintainer building production software since 2016. Specialize in insurance SaaS, Laravel, Vue/Nuxt, Inertia, and TypeScript. Helped architect platforms used by **1,100+ companies/agencies** across **20+ carrier programs and integrations**, and cut quoting from **30 minutes by hand for one carrier to 30 seconds across 20+ programs**. Own architecture, implementation, testing, AWS delivery, and mentoring a team of 4+ engineers.
 
 ## Core skills
 
@@ -35,7 +35,7 @@ _Earlier roles: Full-Stack Developer (Dec 2019); Senior Full-Stack Developer (Ju
 Hands-on technical direction and delivery across insurance, messaging, commerce, and operational SaaS.
 
 - Primary engineer on **RocketMGA and RocketFlood** quoting and agent platforms supporting **1,100+ companies/agencies** and **20+ carrier programs and integrations**.
-- Cut a core quote path from **8-10 seconds to under 1 second** through Redis caching, parallel carrier calls, batching, and asynchronous processing on AWS.
+- Cut quoting from **30 minutes by hand for one carrier to 30 seconds across 20+ carrier programs** through Redis caching, parallel carrier calls, batching, and asynchronous processing on AWS.
 - Lead architect of **One Pro Suite**: Laravel/Inertia/Vue/TypeScript SaaS with 18 backend modules, 17 carrier gateways, schema-driven intake, realtime quotes, generated contracts, tenant-aware RBAC, encrypted credentials, and audit history.
 - Built CI/security checks and immutable, health-checked blue/green AWS releases with rollback: **15 GitHub Actions workflows** and **450+ automated test files** (October 2026 snapshot).
 - Delivered **RocketTexto** messaging, **Emulait** Shopify fulfillment automation, and **Insurance Express** Zoho CRM/AMS integrations through NBTHub (client engagement, May 2023-October 2024).

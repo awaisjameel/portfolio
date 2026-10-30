@@ -21,7 +21,7 @@ export const site = {
 
 export const proof = [
   { value: '1,100+', label: "companies use platforms I've helped build" },
-  { value: '8–10 s to under 1 s', label: 'core quote time' },
+  { value: '30 min to 30 s', label: 'quote time, from 1 carrier by hand to 20+ programs' },
   { value: '20+', label: 'carrier programs and integrations' },
   { value: '8,700+', label: 'GitHub contributions since 2020' }
 ]

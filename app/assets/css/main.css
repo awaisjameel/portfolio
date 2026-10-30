@@ -651,7 +651,7 @@ section,
 
 .speed-row {
   display: grid;
-  grid-template-columns: 4.2em minmax(0, 1fr);
+  grid-template-columns: 5em minmax(0, 1fr);
   gap: 10px;
   align-items: center;
   color: var(--muted);
@@ -669,23 +669,20 @@ section,
 
 .track .solid {
   background: var(--line-strong);
-  width: 80%;
+  width: 100%;
 }
 
-.track .range {
-  background: repeating-linear-gradient(135deg, var(--line-strong) 0 3px, transparent 3px 6px);
-  width: 20%;
-}
-
+/* True scale: 30 seconds of a 30 minute axis. */
 .track .fast {
   background: var(--accent);
-  width: 9%;
+  width: 1.67%;
+  min-width: 4px;
 }
 
 .axis {
   display: flex;
   justify-content: space-between;
-  margin-left: calc(4.2em + 10px);
+  margin-left: calc(5em + 10px);
   color: var(--muted);
   font-size: 0.6875rem;
 }

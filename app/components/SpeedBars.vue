@@ -2,16 +2,16 @@
   <div
     class="speed mono"
     role="img"
-    aria-label="Core quote time on a ten second scale. Before: 8 to 10 seconds. After: under 1 second."
+    aria-label="Quote time on a thirty minute scale. By hand for one carrier: 30 minutes. With the platform across 20+ carrier programs: 30 seconds."
   >
     <div class="speed-row">
-      <span>before</span>
-      <div class="track"><i class="solid"></i><i class="range"></i></div>
+      <span>by hand</span>
+      <div class="track"><i class="solid"></i></div>
     </div>
     <div class="speed-row">
-      <span>after</span>
+      <span>platform</span>
       <div class="track"><i class="fast"></i></div>
     </div>
-    <div class="axis"><span>0 s</span><span>5 s</span><span>10 s</span></div>
+    <div class="axis"><span>0</span><span>15 min</span><span>30 min</span></div>
   </div>
 </template>
