@@ -2,7 +2,7 @@
 
 **Senior Full-Stack Engineer · Software Architect · Open-Source Maintainer**
 
-Lahore, Pakistan (open to remote) · <hello@afoxtech.com>
+Lahore, Pakistan (open to remote) · <hello@afoxtech.com> · [afoxtech.com](https://afoxtech.com)
 
 [linkedin.com/in/awaisjameel](https://www.linkedin.com/in/awaisjameel) · [github.com/awaisjameel](https://github.com/awaisjameel) · [packagist.org/users/awaisjameel](https://packagist.org/users/awaisjameel/) · [npmjs.com/\~awaisjameel](https://www.npmjs.com/~awaisjameel)
 
